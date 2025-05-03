@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Evaluation Prediction</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"> <!-- Link to favicon -->
+</head>
+<body>
+    <h1>Car Evaluation Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="buying">Buying Price:</label>
+        <select name="buying" id="buying">
+            <option value="vhigh">Very High</option>
+            <option value="high">High</option>
+            <option value="med">Medium</option>
+            <option value="low">Low</option>
+        </select><br>
+
+        <label for="maint">Maintenance Cost:</label>
+        <select name="maint" id="maint">
+            <option value="vhigh">Very High</option>
+            <option value="high">High</option>
+            <option value="med">Medium</option>
+            <option value="low">Low</option>
+        </select><br>
+
+        <label for="doors">Number of Doors:</label>
+        <select name="doors" id="doors">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5more">5 or more</option>
+        </select><br>
+
+        <label for="persons">Capacity:</label>
+        <select name="persons" id="persons">
+            <option value="2">2</option>
+            <option value="4">4</option>
+            <option value="more">More</option>
+        </select><br>
+
+        <label for="lug_boot">Luggage Boot Size :</label>
+        <select name="lug_boot" id="lug_boot">
+            <option value="small">Small</option>
+            <option value="med">Medium</option>
+            <option value="big">Big</option>
+        </select><br>
+
+        <label for="safety">Safety Rating:</label>
+        <select name="safety" id="safety">
+            <option value="low">Low</option>
+            <option value="med">Medium</option>
+            <option value="high">High</option>
+        </select><br>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
