@@ -1,57 +1,37 @@
-# Car Evaluation Machine Learning Project
+![Car Evaluation ML banner](assets/project-banner.svg)
 
-## Overview
+# Car Evaluation ML
 
-The Car Evaluation Machine Learning Project aims to predict the evaluation class of a car based on various features such as buying price, maintenance cost, number of doors, capacity, luggage boot size, and safety rating. This project utilizes a machine learning model built with Python and Flask to create a web application for user interaction.
+A Python and Flask demonstration of car suitability classification from six categorical features: purchase price, maintenance, doors, capacity, luggage space and safety.
 
-## Technologies Used
+## Included implementation
 
-- **Python**: Programming language used for the project.
-- **Flask**: Web framework for building the web application.
-- **Scikit-learn**: Machine learning library for model training and evaluation.
-- **Pandas**: Data manipulation library for handling the dataset.
-- **Joblib**: Library for saving and loading the trained model.
-- **HTML/CSS**: Frontend technologies for creating the user interface.
+- `train_model.py` downloads the UCI Car Evaluation dataset, one-hot encodes features, trains a random forest and prints holdout accuracy.
+- `app.py` loads a saved classifier and encoder, serves a form, and renders a predicted category.
+- `templates/` contains the frontend pages; `car_evaluation_model.pkl` and `encoder.pkl` are existing serialized artifacts.
 
-## Dataset
+## Local setup
 
-The project uses the Car Evaluation dataset from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/car+evaluation).
+```bash
+python -m pip install -r requirements.txt
+python app.py
+```
 
-## Project Structure
-/CarEvaluationProject ├── app.py # Flask application ├── train_model.py # Model training script ├── car_evaluation_model.pkl # Trained model file ├── encoder.pkl # Encoder file ├── favicon.ico # Favicon file └── /templates ├── index.html # Input form HTML └── result.html # Prediction result HTML
+Then open `http://127.0.0.1:5000`.
 
+To retrain, run `python train_model.py` with access to the referenced UCI dataset.
 
-## Installation
+## Known limitations
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/yourusername/CarEvaluationProject.git
-   cd CarEvaluationProject
+- Only load trusted `.pkl` files. The version used to create the saved model has not been confirmed.
+- The existing serialized artifacts and Flask UI have not been integration-tested in this review.
+- No validated benchmark metrics are claimed here. Re-run training and document the actual data split and performance before publishing results.
+- This is a demonstration, not professional automotive purchasing advice.
 
-   Install Required Packages: Make sure you have Python installed, then install the required packages using pip:
-   pip install -r requirements.txt
+## Maintainer
 
-   Run the Model Training Script: Before running the application, train the model by executing:
-   python train_model.py
+Abhinav Saini · GitHub: spyderabhi
 
-   Run the Flask Application: Start the Flask application with:
-   python app.py
+## License and data
 
-   Access the Application: Open your web browser and go to http://127.0.0.1:5000/.
-  
-   
-   Usage
-On the home page, fill in the car features in the provided form.
-Click the "Predict" button to see the predicted evaluation class of the car.
-The result will be displayed on a new page.
-Future Work
-Improve the user interface with CSS or frameworks like Bootstrap.
-Implement error handling for invalid inputs.
-Deploy the application on platforms like Heroku or AWS.
-Create comprehensive documentation for users.
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Acknowledgments
-Special thanks to the UCI Machine Learning Repository for providing the dataset.
-Thanks to the open-source community for the libraries and frameworks used in this project.
+Refer to `LICENSE` and the UCI Machine Learning Repository's Car Evaluation dataset terms.
